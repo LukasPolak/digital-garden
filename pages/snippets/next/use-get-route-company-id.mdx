@@ -1,0 +1,76 @@
+---
+title: Get Route Parameter
+description: "A hook for getting the value of a specified route parameter."
+---
+
+# Get Route Parameter
+
+A hook for getting the value of a specified route parameter.
+
+```tsx
+export type UseGetRouteParameter = (options: {
+  parameter: string;
+  onError?: () => void;
+}) => {
+  value: string | string[] | undefined;
+};
+
+export const useGetRouteParameter: UseGetRouteParameter = ({
+  parameter,
+  onError,
+}) => {
+  const router = useRouter();
+  const value = router.query[parameter];
+
+  if (!value && router.isReady) {
+    onError?.();
+  }
+
+  return { value };
+};
+```
+
+## Usage
+
+```tsx
+// Precondition:
+//
+// pathname: "companies/[id]",
+// query: {
+//   "id": "foo",
+// },
+
+import { useGetRouteParameter } from "./use-get-route-parameter";
+
+const { value } = useGetRouteParameter({
+  parameter: "id",
+});
+
+console.log(value); // "foo"
+```
+
+## Specialized hooks
+
+To achieve the DRY principle and improve developer experience, we can create a specialized hook to retrieve a specific path parameter
+
+```tsx
+export type SpecializedOptions = {
+  onError?: () => void;
+};
+
+export const useGetRouteCompanyId = (options?: SpecializedOptions) => {
+  const { value: companyId } = useGetRouteParameter({
+    parameter: "company-id",
+    ...options,
+  });
+
+  return { companyId };
+};
+
+const { companyId } = useGetRouteCompanyId();
+```
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/use-get-route-company-id.tsx)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/use-get-route-company-id.test.tsx)
