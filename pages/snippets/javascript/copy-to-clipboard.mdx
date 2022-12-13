@@ -1,0 +1,40 @@
+---
+title: Copy to Clipboard
+description: "Utility function to copy data to the clipboard."
+---
+
+# Copy to Clipboard
+
+Utility function to copy data to the clipboard.
+
+```ts
+export const copyToClipboard = async ({
+  data,
+  onError,
+  onSuccess,
+}: {
+  data: string;
+  onSuccess?: () => void;
+  onError?: (error: unknown) => void;
+}) => {
+  try {
+    await navigator.clipboard.writeText(data);
+    onSuccess?.();
+  } catch (error: unknown) {
+    onError?.(error);
+  }
+};
+```
+
+## Usage
+
+```ts
+import { copyToClipboard } from "./copy-to-clipboard";
+
+copyToClipboard({ data });
+```
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/copy-to-clipboard.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/copy-to-clipboard.test.ts)
