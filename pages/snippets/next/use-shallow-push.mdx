@@ -11,12 +11,6 @@ A hook for handling client-side transitions without running data fetching method
 export const useShallowPush = () => {
   const router = useRouter();
 
-  /**
-   * Performs a `pushState` with arguments
-   * @param url of the route
-   * @param as masks `url` for the browser
-   * @param options object you can define `locale`, `scroll` and `unstable_skipClientCache`
-   */
   const shallowPush = (
     url: UrlObject | string,
     as?: string | undefined,
