@@ -1,0 +1,23 @@
+---
+title: Shallow Push
+description: "A hook for handling client-side transitions without running data fetching methods again"
+---
+
+# Shallow Push
+
+A hook for handling client-side transitions without running data fetching methods again (`getServerSideProps`, `getStaticProps`, and `getInitialProps`).
+
+## Usage
+
+```tsx
+import { useShallowPush } from "./use-shallow-push";
+
+const { shallowPush } = useShallowPush();
+
+shallowPush("/foo");
+```
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/use-shallow-push.tsx)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/use-shallow-push.test.tsx)
