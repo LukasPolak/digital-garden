@@ -1,0 +1,27 @@
+---
+title: Isomorphic Layout Effect
+description: "A hook that uses `useLayoutEffect` on the client and `useEffect` on the server."
+---
+
+# Isomorphic Layout Effect
+
+A hook that uses `useLayoutEffect` on the client and `useEffect` on the server.
+
+```ts
+import { useEffect, useLayoutEffect } from "react";
+
+export const useIsomorphicLayoutEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
+```
+
+## Usage
+
+```ts
+useIsomorphicLayoutEffect(() => {
+  // ...
+}, []);
+```
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/use-isomorphic-layout-effect.ts)
