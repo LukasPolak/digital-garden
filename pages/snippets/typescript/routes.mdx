@@ -1,0 +1,75 @@
+---
+title: Routes
+description: "Utility function to generate routes and their keys."
+---
+
+# Routes
+
+Utility function to generate routes and their keys.
+
+Each function is named after the route it represents and takes in the necessary parameters for that route.
+
+```ts
+const validateRequiredArguments = (args: { [key: string]: string }) => {
+  Object.keys(args).forEach((key) => {
+    const value = args[key];
+
+    if (value === undefined || value === null || value === "") {
+      throw new Error(`\`${key}\` is required. Received \`${value}\``);
+    }
+
+    if (typeof value !== "string") {
+      throw new Error(
+        `\`${key}\` must be a string. Received \`${JSON.stringify(value)}\``
+      );
+    }
+  });
+};
+
+export const routes = {
+  COMPANIES_COMPANY_ID_WORKSPACES_WORKSPACE_ID_USERS_USER_ID: (args: {
+    companyId: string;
+    workspaceId: string;
+    userId: string;
+  }) => {
+    // validate that all required arguments are provided; throw an error if not
+    validateRequiredArguments(args);
+    const { companyId, workspaceId, userId } = args;
+
+    return `companies/${companyId}/workspaces/${workspaceId}/users/${userId}`;
+  },
+};
+
+export const routesKeys = Object.keys(routes).reduce(
+  (acc: object, key: string) => ({
+    ...acc,
+    [key]: key,
+  }),
+  {}
+) as Record<keyof typeof routes, string>;
+```
+
+## Usage
+
+```ts
+import { routes, routesKeys } from "./routes";
+
+const route = routes.COMPANIES_COMPANY_ID_WORKSPACES_WORKSPACE_ID_USERS_USER_ID(
+  {
+    companyId: "foo",
+    userId: "baz",
+    workspaceId: "bar",
+  }
+);
+
+console.log(route); // "companies/foo/workspaces/bar/users/baz"
+
+console.log(
+  routesKeys.COMPANIES_COMPANY_ID_WORKSPACES_WORKSPACE_ID_USERS_USER_ID
+); // "COMPANIES_COMPANY_ID_WORKSPACES_WORKSPACE_ID_USERS_USER_ID"
+```
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/routes.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/routes.test.ts)
