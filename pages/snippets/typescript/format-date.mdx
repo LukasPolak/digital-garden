@@ -1,0 +1,38 @@
+---
+title: Format Date
+description: "Utility function to format date"
+---
+
+# Format Date
+
+Utility function to format date
+
+```ts
+export const formatDate = (date: Date) => {
+  if (!date) {
+    return "";
+  }
+
+  try {
+    return new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }).format(date);
+  } catch (e) {
+    console.error(e);
+    return "";
+  }
+};
+```
+
+## Usage
+
+```ts
+formatDate(new Date("2021-01-01")); // January 1, 2021
+```
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/format-date.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/format-date.test.ts)

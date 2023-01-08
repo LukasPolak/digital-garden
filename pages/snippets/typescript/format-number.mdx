@@ -1,0 +1,36 @@
+---
+title: Format Number
+description: "Utility function to format number"
+---
+
+# Format Number
+
+Utility function to format number
+
+```ts
+export const formatNumber = (number: number) => {
+  if (!number) {
+    return "";
+  }
+
+  try {
+    return new Intl.NumberFormat("en-US", {
+      notation: "compact",
+    }).format(number);
+  } catch (e) {
+    console.error(e);
+    return "";
+  }
+};
+```
+
+## Usage
+
+```ts
+formatNumber(1000); // 1K
+```
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/format-number.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/format-number.test.ts)
