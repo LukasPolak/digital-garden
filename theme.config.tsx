@@ -38,6 +38,11 @@ const config: DocsThemeConfig = {
           property="og:description"
           content={frontMatter.description || "Digital Garden"}
         />
+        <script
+          defer
+          data-domain="digital-garden.lukaspolak.com"
+          src="https://plausible.io/js/script.js"
+        />
       </>
     );
   },
