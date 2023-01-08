@@ -1,0 +1,38 @@
+---
+title: On App Load
+description: "Run a callback only once on app load"
+---
+
+# On App Load
+
+Run a callback only once on app load
+
+```ts
+import { useEffect } from "react";
+
+let didInit = false;
+
+export const useOnAppLoad = (callback: () => void) => {
+  useEffect(() => {
+    if (!didInit) {
+      didInit = true;
+
+      callback();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+};
+```
+
+## Usage
+
+```ts
+useOnAppLoad(() => {
+  console.log("App loaded");
+});
+```
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/use-on-app-load.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/nextjs/use-on-app-load.test.ts)
