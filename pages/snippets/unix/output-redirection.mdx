@@ -1,0 +1,22 @@
+---
+title: Output Redirection
+description: "Save the output of a command to a file"
+---
+
+# Output Redirection
+
+Output redirection is a feature in command line shells that allows you to redirect the output of a command to a file or another command. This is useful when you want to save the output of a command to a file or when you want to send the output of a command as input to another command.
+
+## Examples
+
+### `>` operator
+
+```bash />/
+"node_modules" > .gitignore # override existing file, or create a new one if it doesn’t exist.
+```
+
+### `>>` operator
+
+```bash />>/
+".next" >> .gitignore # append to the existing file, or create a new one if it doesn’t exist.
+```

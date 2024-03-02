@@ -1,0 +1,19 @@
+---
+title: Create Nested Directories
+description: "Create intermediate directories as required."
+---
+
+# Create Nested Directories
+
+Create intermediate directories as required.
+
+## Examples
+
+```bash /-p/
+# follwing command will fail if foo/bar does not exist
+mkdir foo/bar/baz
+# mkdir: foo/bar: No such file or directory
+
+# follwing command will create /foo/bar/baz if it does not exist
+mkdir -p foo/bar/baz
+```
