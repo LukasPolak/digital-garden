@@ -3,10 +3,12 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier . --write"
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "prettier": "^3.2.5",
     "raw-loader": "^4.0.2"
   },
   "peerDependencies": {
