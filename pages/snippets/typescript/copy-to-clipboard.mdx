@@ -1,0 +1,37 @@
+---
+title: "Copy to Clipboard"
+description: "Utility function to copy data to the clipboard."
+---
+
+import {
+  SourceCode,
+  getSourceCodeStaticProps,
+} from "src/components/source-code.tsx";
+
+export const getStaticProps = () =>
+  getSourceCodeStaticProps([
+    "snippets/typescript/copy-to-clipboard.ts",
+    "snippets/typescript/copy-to-clipboard.example.ts",
+    "snippets/typescript/copy-to-clipboard.test.ts",
+  ]);
+
+# Copy to Clipboard
+
+Utility function to copy data to the clipboard.
+
+## Code
+
+<SourceCode fileName="snippets/typescript/copy-to-clipboard.ts" />
+
+## Examples
+
+<SourceCode fileName="snippets/typescript/copy-to-clipboard.example.ts" />
+
+## Tests
+
+<SourceCode fileName="snippets/typescript/copy-to-clipboard.test.ts" />
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/typescript/copy-to-clipboard.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/typescript/copy-to-clipboard.test.ts)

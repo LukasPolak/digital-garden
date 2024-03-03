@@ -1,0 +1,37 @@
+---
+title: "On App Load"
+description: "Run a callback only once on app load"
+---
+
+import {
+  SourceCode,
+  getSourceCodeStaticProps,
+} from "src/components/source-code.tsx";
+
+export const getStaticProps = () =>
+  getSourceCodeStaticProps([
+    "snippets/react/use-on-app-load.ts",
+    "snippets/react/use-on-app-load.example.tsx",
+    "snippets/react/use-on-app-load.test.ts",
+  ]);
+
+# On App Load
+
+Run a callback only once on app load
+
+## Code
+
+<SourceCode fileName="snippets/react/use-on-app-load.ts" />
+
+## Examples
+
+<SourceCode fileName="snippets/react/use-on-app-load.example.tsx" />
+
+## Tests
+
+<SourceCode fileName="snippets/react/use-on-app-load.test.ts" />
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/react/use-on-app-load.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/react/use-on-app-load.test.ts)

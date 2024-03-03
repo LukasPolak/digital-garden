@@ -1,0 +1,37 @@
+---
+title: "App Context"
+description: "Custom React hook for accessing app context"
+---
+
+import {
+  SourceCode,
+  getSourceCodeStaticProps,
+} from "src/components/source-code.tsx";
+
+export const getStaticProps = () =>
+  getSourceCodeStaticProps([
+    "snippets/react/use-app-context.tsx",
+    "snippets/react/use-app-context.example.tsx",
+    "snippets/react/use-app-context.test.ts",
+  ]);
+
+# App Context
+
+Custom React hook for accessing app context
+
+## Code
+
+<SourceCode fileName="snippets/react/use-app-context.tsx" />
+
+## Examples
+
+<SourceCode fileName="snippets/react/use-app-context.example.tsx" />
+
+## Tests
+
+<SourceCode fileName="snippets/react/use-app-context.test.ts" />
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/react/use-app-context.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/react/use-app-context.test.ts)

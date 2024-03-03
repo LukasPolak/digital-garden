@@ -1,0 +1,39 @@
+---
+title: "Routes"
+description: "Utility function to generate routes and their keys."
+---
+
+import {
+  SourceCode,
+  getSourceCodeStaticProps,
+} from "src/components/source-code.tsx";
+
+export const getStaticProps = () =>
+  getSourceCodeStaticProps([
+    "snippets/typescript/routes.ts",
+    "snippets/typescript/routes.example.ts",
+    "snippets/typescript/routes.test.ts",
+  ]);
+
+# Routes
+
+Utility function to generate routes and their keys.
+
+Each function is named after the route it represents and takes in the necessary parameters for that route.
+
+## Code
+
+<SourceCode fileName="snippets/typescript/routes.ts" />
+
+## Examples
+
+<SourceCode fileName="snippets/typescript/routes.example.ts" />
+
+## Tests
+
+<SourceCode fileName="snippets/typescript/routes.test.ts" />
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/typescript/routes.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/typescript/routes.test.ts)

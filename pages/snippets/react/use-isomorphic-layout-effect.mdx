@@ -1,0 +1,37 @@
+---
+title: "Isomorphic Layout Effect"
+description: "A hook that uses `useLayoutEffect` on the client and `useEffect` on the server."
+---
+
+import {
+  SourceCode,
+  getSourceCodeStaticProps,
+} from "src/components/source-code.tsx";
+
+export const getStaticProps = () =>
+  getSourceCodeStaticProps([
+    "snippets/react/use-isomorphic-layout-effect.ts",
+    "snippets/react/use-isomorphic-layout-effect.example.tsx",
+    "snippets/react/use-isomorphic-layout-effect.test.ts",
+  ]);
+
+# Isomorphic Layout Effect
+
+A hook that uses `useLayoutEffect` on the client and `useEffect` on the server.
+
+## Code
+
+<SourceCode fileName="snippets/react/use-isomorphic-layout-effect.ts" />
+
+## Examples
+
+<SourceCode fileName="snippets/react/use-isomorphic-layout-effect.example.tsx" />
+
+## Tests
+
+<SourceCode fileName="snippets/react/use-isomorphic-layout-effect.test.ts" />
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/react/use-isomorphic-layout-effect.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/react/use-isomorphic-layout-effect.test.ts)
