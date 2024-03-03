@@ -4,10 +4,12 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "generate:snippet": "hygen snippet new"
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "hygen": "^6.2.11",
     "prettier": "^3.2.5",
     "raw-loader": "^4.0.2"
   },
