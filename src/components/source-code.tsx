@@ -43,7 +43,7 @@ export function SourceCode(props: SourceCodeProps) {
     .replaceAll(
       '<span class="line"></span>',
       '<span class="line">\n</span>',
-      "gi"
+      "gi",
     );
 
   return (
