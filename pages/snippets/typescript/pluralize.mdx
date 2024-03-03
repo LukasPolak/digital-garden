@@ -1,0 +1,36 @@
+---
+title: "Pluralize"
+description: "Returns the plural or singular form of a noun based on the count."
+---
+
+import {
+  SourceCode,
+  getSourceCodeStaticProps,
+} from "src/components/source-code.tsx";
+
+export const getStaticProps = () =>
+  getSourceCodeStaticProps([
+    "snippets/typescript/pluralize.ts",
+    "snippets/typescript/pluralize.example.ts",
+    "snippets/typescript/pluralize.test.ts",
+  ]);
+
+# Pluralize
+
+Returns the plural or singular form of a noun based on the count.
+
+<SourceCode fileName="snippets/typescript/pluralize.ts" />
+
+## Examples
+
+<SourceCode fileName="snippets/typescript/pluralize.example.ts" />
+
+## Tests
+
+<SourceCode fileName="snippets/typescript/pluralize.test.ts" />
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/snippets/typescript/pluralize.ts)
+- [example](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/snippets/typescript/pluralize.example.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/snippets/typescript/pluralize.test.ts)
