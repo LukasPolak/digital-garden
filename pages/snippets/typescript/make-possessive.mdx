@@ -1,0 +1,38 @@
+---
+title: "Make possessive"
+description: "Returns the possessive form of a given input string. If the input string ends with 's', it appends an apostrophe. Otherwise, it appends an apostrophe followed by 's'."
+---
+
+import {
+  SourceCode,
+  getSourceCodeStaticProps,
+} from "src/components/source-code.tsx";
+
+export const getStaticProps = () =>
+  getSourceCodeStaticProps([
+    "snippets/typescript/make-possessive.ts",
+    "snippets/typescript/make-possessive.example.ts",
+    "snippets/typescript/make-possessive.test.ts",
+  ]);
+
+# Make possessive
+
+Returns the possessive form of a given input string.
+If the input string ends with 's', it appends an apostrophe.
+Otherwise, it appends an apostrophe followed by 's'.
+
+<SourceCode fileName="snippets/typescript/make-possessive.ts" />
+
+## Examples
+
+<SourceCode fileName="snippets/typescript/make-possessive.example.ts" />
+
+## Tests
+
+<SourceCode fileName="snippets/typescript/make-possessive.test.ts" />
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/snippets/typescript/make-possessive.ts)
+- [example](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/snippets/typescript/make-possessive.example.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/snippets/typescript/make-possessive.test.ts)
