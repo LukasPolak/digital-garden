@@ -1,0 +1,36 @@
+---
+title: "Generate UUID"
+description: "Generates a random UUID (Universally Unique Identifier)."
+---
+
+import {
+  SourceCode,
+  getSourceCodeStaticProps,
+} from "src/components/source-code.tsx";
+
+export const getStaticProps = () =>
+  getSourceCodeStaticProps([
+    "snippets/typescript/generate-uuid.ts",
+    "snippets/typescript/generate-uuid.example.ts",
+    "snippets/typescript/generate-uuid.test.ts",
+  ]);
+
+# Generate UUID
+
+Generates a random UUID (Universally Unique Identifier).
+
+<SourceCode fileName="snippets/typescript/generate-uuid.ts" />
+
+## Examples
+
+<SourceCode fileName="snippets/typescript/generate-uuid.example.ts" />
+
+## Tests
+
+<SourceCode fileName="snippets/typescript/generate-uuid.test.ts" />
+
+## Sources
+
+- [source code](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/snippets/typescript/generate-uuid.ts)
+- [example](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/snippets/typescript/generate-uuid.example.ts)
+- [tests](https://github.com/LukasPolak/digital-garden/blob/main/src/snippets/snippets/typescript/generate-uuid.test.ts)
